@@ -19,7 +19,8 @@ def index():
         config = {'ClientId': app.config['CLIENT_ID'] , 'CallbackURL': app.config['CALLBACK_URL'] +'?subscribe=' + horoscope}
         return render_template("subscribe.html", config = config)
     else:
-        return 'Please provide your zodiac sign'
+        config = {'IndexURL': app.config['INDEX_URL']}
+        return render_template("index.html", config = config)
         
 @app.route('/callback',methods=['GET'])
 def callback():
