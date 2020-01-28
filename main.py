@@ -17,7 +17,7 @@ def index():
     if request.args.get('subscribe'):
         horoscope = request.args.get('subscribe')
         config = {'ClientId': app.config['CLIENT_ID'] , 'CallbackURL': app.config['CALLBACK_URL'] +'?subscribe=' + horoscope}
-        return render_template("index.html", config = config)
+        return render_template("subscribe.html", config = config)
     else:
         return 'Please provide your zodiac sign'
         
